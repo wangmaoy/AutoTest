@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+    <test name="Test1">
+        <classes>
+            <class name="com.selenium.sjzj.testcase.SuiteTestLogin"/>
+            <class name="com.selenium.sjzj.testcase.gzpz.SuiteTestGzpzZdy"/>
+            <class name="com.selenium.sjzj.testcase.gzpz.SuiteTestGzpzYdy"/>
+        </classes>
+    </test>
+</suite>

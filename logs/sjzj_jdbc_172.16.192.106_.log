@@ -1,0 +1,363 @@
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 7 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 2 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 2 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 1 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 2 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select t.c_gid gid,t.c_rule_id rule_id,t.c_rule_name rule_name,t.n_bhgl rate FROM t_tjfx_rule t WHERE to_date(to_char(t.dt_zhzjsj,'DD Mon YYYY'),'DD Mon 
+YYYY') = (current_date - interval '1 day') ORDER BY rate DESC limit 20 OFFSET 0 
+ {executed in 5 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select COALESCE(a.date_str,b.date_str) date_str,COALESCE(zjs,0) zjs,COALESCE(b.gjs,0) gjs,COALESCE(round(b.gjs::numeric/a.zjs::numeric,4),0) rate FROM 
+(select to_char(t2.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t2.c_rule_id) zjs FROM t_tjfx_rule t2 WHERE t2.dt_zhzjsj > (current_date - interval '30 day') 
+and t2.dt_zhzjsj < (current_date) GROUP BY date_str) a LEFT JOIN (select to_char(t.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t.c_rule_id) gjs FROM t_tjfx_rule 
+t WHERE t.n_sfgj = '1' and t.dt_zhzjsj > (current_date - interval '30 day') and t.dt_zhzjsj < (current_date) GROUP BY date_str ) b ON a.date_str=b.date_str 
+ORDER BY date_str 
+ {executed in 4 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select SUM(ljcjs) from (select max(n_ljcjs) as ljcjs FROM t_tjfx_rule GROUP BY c_rule_id ) as b 
+ {executed in 1 msec}
+2018-10-30 18:52:02 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = ?##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = 1 
+ {executed in 1 msec}
+2018-10-30 18:52:11 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' 
+ {executed in 4 msec}
+2018-10-30 18:52:14 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select t.c_gid gid,t.c_rule_id rule_id,t.c_rule_name rule_name,t.n_bhgl rate FROM t_tjfx_rule t WHERE to_date(to_char(t.dt_zhzjsj,'DD Mon YYYY'),'DD Mon 
+YYYY') = (current_date - interval '1 day') ORDER BY rate DESC limit 20 OFFSET 0 
+ {executed in 3 msec}
+2018-10-30 18:52:14 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select COALESCE(a.date_str,b.date_str) date_str,COALESCE(zjs,0) zjs,COALESCE(b.gjs,0) gjs,COALESCE(round(b.gjs::numeric/a.zjs::numeric,4),0) rate FROM 
+(select to_char(t2.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t2.c_rule_id) zjs FROM t_tjfx_rule t2 WHERE t2.dt_zhzjsj > (current_date - interval '30 day') 
+and t2.dt_zhzjsj < (current_date) GROUP BY date_str) a LEFT JOIN (select to_char(t.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t.c_rule_id) gjs FROM t_tjfx_rule 
+t WHERE t.n_sfgj = '1' and t.dt_zhzjsj > (current_date - interval '30 day') and t.dt_zhzjsj < (current_date) GROUP BY date_str ) b ON a.date_str=b.date_str 
+ORDER BY date_str 
+ {executed in 2 msec}
+2018-10-30 18:52:14 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select SUM(ljcjs) from (select max(n_ljcjs) as ljcjs FROM t_tjfx_rule GROUP BY c_rule_id ) as b 
+ {executed in 1 msec}
+2018-10-30 18:52:14 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = ?##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = 1 
+ {executed in 1 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 5 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 8 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 8 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 7 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 7 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 3 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 3 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 3 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 1 msec}
+2018-10-30 18:52:18 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 15 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:34:15 [Druid-ConnectionPool-Create-565636538] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 1 msec}
+2018-10-30 19:34:15 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select t.c_gid gid,t.c_rule_id rule_id,t.c_rule_name rule_name,t.n_bhgl rate FROM t_tjfx_rule t WHERE to_date(to_char(t.dt_zhzjsj,'DD Mon YYYY'),'DD Mon 
+YYYY') = (current_date - interval '1 day') ORDER BY rate DESC limit 20 OFFSET 0 
+ {executed in 4 msec}
+2018-10-30 19:34:15 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select COALESCE(a.date_str,b.date_str) date_str,COALESCE(zjs,0) zjs,COALESCE(b.gjs,0) gjs,COALESCE(round(b.gjs::numeric/a.zjs::numeric,4),0) rate FROM 
+(select to_char(t2.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t2.c_rule_id) zjs FROM t_tjfx_rule t2 WHERE t2.dt_zhzjsj > (current_date - interval '30 day') 
+and t2.dt_zhzjsj < (current_date) GROUP BY date_str) a LEFT JOIN (select to_char(t.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t.c_rule_id) gjs FROM t_tjfx_rule 
+t WHERE t.n_sfgj = '1' and t.dt_zhzjsj > (current_date - interval '30 day') and t.dt_zhzjsj < (current_date) GROUP BY date_str ) b ON a.date_str=b.date_str 
+ORDER BY date_str 
+ {executed in 2 msec}
+2018-10-30 19:34:15 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select SUM(ljcjs) from (select max(n_ljcjs) as ljcjs FROM t_tjfx_rule GROUP BY c_rule_id ) as b 
+ {executed in 2 msec}
+2018-10-30 19:34:15 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = ?##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = 1 
+ {executed in 1 msec}
+2018-10-30 19:34:31 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select t.c_gid gid,t.c_rule_id rule_id,t.c_rule_name rule_name,t.n_bhgl rate FROM t_tjfx_rule t WHERE to_date(to_char(t.dt_zhzjsj,'DD Mon YYYY'),'DD Mon 
+YYYY') = (current_date - interval '1 day') ORDER BY rate DESC limit 20 OFFSET 0 
+ {executed in 3 msec}
+2018-10-30 19:34:31 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select COALESCE(a.date_str,b.date_str) date_str,COALESCE(zjs,0) zjs,COALESCE(b.gjs,0) gjs,COALESCE(round(b.gjs::numeric/a.zjs::numeric,4),0) rate FROM 
+(select to_char(t2.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t2.c_rule_id) zjs FROM t_tjfx_rule t2 WHERE t2.dt_zhzjsj > (current_date - interval '30 day') 
+and t2.dt_zhzjsj < (current_date) GROUP BY date_str) a LEFT JOIN (select to_char(t.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t.c_rule_id) gjs FROM t_tjfx_rule 
+t WHERE t.n_sfgj = '1' and t.dt_zhzjsj > (current_date - interval '30 day') and t.dt_zhzjsj < (current_date) GROUP BY date_str ) b ON a.date_str=b.date_str 
+ORDER BY date_str 
+ {executed in 2 msec}
+2018-10-30 19:34:31 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select SUM(ljcjs) from (select max(n_ljcjs) as ljcjs FROM t_tjfx_rule GROUP BY c_rule_id ) as b 
+ {executed in 1 msec}
+2018-10-30 19:34:31 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = ?##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = 1 
+ {executed in 1 msec}
+2018-10-30 19:34:47 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select t.c_gid gid,t.c_rule_id rule_id,t.c_rule_name rule_name,t.n_bhgl rate FROM t_tjfx_rule t WHERE to_date(to_char(t.dt_zhzjsj,'DD Mon YYYY'),'DD Mon 
+YYYY') = (current_date - interval '1 day') ORDER BY rate DESC limit 20 OFFSET 0 
+ {executed in 2 msec}
+2018-10-30 19:34:47 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select COALESCE(a.date_str,b.date_str) date_str,COALESCE(zjs,0) zjs,COALESCE(b.gjs,0) gjs,COALESCE(round(b.gjs::numeric/a.zjs::numeric,4),0) rate FROM 
+(select to_char(t2.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t2.c_rule_id) zjs FROM t_tjfx_rule t2 WHERE t2.dt_zhzjsj > (current_date - interval '30 day') 
+and t2.dt_zhzjsj < (current_date) GROUP BY date_str) a LEFT JOIN (select to_char(t.dt_zhzjsj,'YYYY-MM-DD') date_str,count(t.c_rule_id) gjs FROM t_tjfx_rule 
+t WHERE t.n_sfgj = '1' and t.dt_zhzjsj > (current_date - interval '30 day') and t.dt_zhzjsj < (current_date) GROUP BY date_str ) b ON a.date_str=b.date_str 
+ORDER BY date_str 
+ {executed in 2 msec}
+2018-10-30 19:34:47 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select SUM(ljcjs) from (select max(n_ljcjs) as ljcjs FROM t_tjfx_rule GROUP BY c_rule_id ) as b 
+ {executed in 1 msec}
+2018-10-30 19:34:47 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = ?##^^##select count(t.c_id) FROM t_info_rule t WHERE t.n_valid = 1 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 6 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 2 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 15 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:36:48 [Druid-ConnectionPool-Create-565636538] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 8 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 8 msec}
+2018-10-30 19:36:48 [Druid-ConnectionPool-Create-565636538] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-10] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 4 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 3 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 5 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 3 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-10] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [Druid-ConnectionPool-Create-565636538] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-10] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:36:48 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 6 msec}
+2018-10-30 19:36:54 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT count(*) FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id 
+ {executed in 2 msec}
+2018-10-30 19:36:54 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 2147483646 offset 0 
+ {executed in 4 msec}
+2018-10-30 19:36:54 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:05 [http-nio-19999-exec-10] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db 
+ {executed in 1 msec}
+2018-10-30 19:37:05 [http-nio-19999-exec-10] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 4 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 15 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 3 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-5] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 11 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:37:09 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 4 msec}
+2018-10-30 19:37:10 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db 
+ {executed in 1 msec}
+2018-10-30 19:37:10 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 10 offset 0 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db) tmp_count 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db order by dt_xgsj desc limit ? offset ?##^^##SELECT 
+c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db order by dt_xgsj desc limit 10 offset 0 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 3 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db) tmp_count 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db) tmp_count 
+ {executed in 3 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db order by dt_xgsj desc limit ? offset ?##^^##SELECT 
+c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db order by dt_xgsj desc limit 10 offset 0 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 10 offset 0 
+ {executed in 3 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db order by dt_xgsj desc limit ? offset ?##^^##SELECT 
+c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db order by dt_xgsj desc limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='4' 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [ForkJoinPool.commonPool-worker-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='2' 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='2' 
+ {executed in 1 msec}
+2018-10-30 19:37:17 [ForkJoinPool.commonPool-worker-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='1' 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [ForkJoinPool.commonPool-worker-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='1' 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='3' 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='3' 
+ {executed in 2 msec}
+2018-10-30 19:37:17 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=? AND c_code=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1000' AND c_code='3' 
+ {executed in 3 msec}
+2018-10-30 19:37:30 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp FROM db_aty.t_aty_code WHERE c_pid=?##^^##SELECT c_pid,c_code,c_name,c_levelinfo,n_kwh,n_valid,n_order,c_dmjp 
+FROM db_aty.t_aty_code WHERE c_pid='1001' 
+ {executed in 1 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 1 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 4 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 15 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 4 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 5 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-6] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 3 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-8] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 3 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 0 msec}
+2018-10-30 19:40:13 [Druid-ConnectionPool-Create-565636538] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select 1 
+ {executed in 2 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 0 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-3] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:40:13 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:41:58 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db 
+ {executed in 2 msec}
+2018-10-30 19:41:58 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 3 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from (SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype) tmp_count 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype order by dt_xgsj desc limit ? offset ?##^^##SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj 
+FROM db_aty.t_info_ruletype order by dt_xgsj desc limit 15 offset 0 
+ {executed in 1 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 3 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-2] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 ##^^##select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit ? offset ?##^^##select 
+t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name limit 10 offset 0 
+ {executed in 9 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 3 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-7] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 2 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-9] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 1 msec}
+2018-10-30 19:42:01 [http-nio-19999-exec-4] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 select count(*) from ( select t.*,t1.c_name as db_name FROM t_info_rule t LEFT JOIN t_info_db t1 ON t.c_db_id = t1.c_id WHERE 1=1 ORDER BY t.c_name ) temp_table 
+ {executed in 2 msec}
+2018-10-30 19:45:55 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_type,c_ms,c_url,c_username,c_password,dt_xgsj,dt_cjsj FROM db_aty.t_info_db 
+ {executed in 1 msec}
+2018-10-30 19:45:55 [http-nio-19999-exec-1] [INFO ] jdbc.sqltiming.172.16.32.221.5432.bigdata_sjzj:396 SELECT c_id,c_name,c_ms,dt_xgsj,dt_cjsj FROM db_aty.t_info_ruletype 
+ {executed in 1 msec}

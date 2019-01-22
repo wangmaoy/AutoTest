@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESOURCE xmlns="http://dataexchange.court.gov.cn/2009/data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<info>
+<address>北京市长安街10号</address>
+<bgdh>13604096099</bgdh>
+<cysj>2016-06-09 00:00:00.0</cysj>
+<cz>010-1225251</cz>
+<dzyx>liufeifei@xxx.com</dzyx>
+<lsmc>SD律所2</lsmc>
+<lszw>职员</lszw>
+<lszyxkzh>13604096099</lszyxkzh>
+<lszyzgzh>13604096099</lszyzgzh>
+<mz>14</mz>
+<sfzhm>110101********7677</sfzhm>
+<sjh>13604096091</sjh>
+<xb>1</xb>
+<xm>刘律师</xm>
+<zgzqdrq>2016-06-11</zgzqdrq>
+<zyzqdrq>2016-06-03</zyzqdrq>
+<zyzt>1</zyzt>
+</info>
+</RESOURCE>
