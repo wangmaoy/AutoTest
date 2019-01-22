@@ -3,12 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AutoTest.iml" filepath="$PROJECT_DIR$/.idea/AutoTest.iml" />
+      <module fileurl="file://F:/BaiduNetdiskDownload/课程代码/13章/AutoTest3/AutoTest3.iml" filepath="F:/BaiduNetdiskDownload/课程代码/13章/AutoTest3/AutoTest3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter10/Chapter10.iml" filepath="$PROJECT_DIR$/Chapter10/Chapter10.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter11/Chapter11.iml" filepath="$PROJECT_DIR$/Chapter11/Chapter11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter12/Chapter12.iml" filepath="$PROJECT_DIR$/Chapter12/Chapter12.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter5/Chapter5.iml" filepath="$PROJECT_DIR$/Chapter5/Chapter5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter6/Chapter6.iml" filepath="$PROJECT_DIR$/Chapter6/Chapter6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter7/Chapter7.iml" filepath="$PROJECT_DIR$/Chapter7/Chapter7.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter9/Chapter9.iml" filepath="$PROJECT_DIR$/Chapter9/Chapter9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FbajxxInterface/FbajxxInterface.iml" filepath="$PROJECT_DIR$/FbajxxInterface/FbajxxInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SeleniumDemo/SeleniumDemo.iml" filepath="$PROJECT_DIR$/SeleniumDemo/SeleniumDemo.iml" />
+      <module fileurl="file://E:/决策/数据接口服务/slxx/slxx.iml" filepath="E:/决策/数据接口服务/slxx/slxx.iml" />
     </modules>
   </component>
 </project>

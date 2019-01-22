@@ -6,7 +6,8 @@
       "method":"post"
     },
     "response":{
-      "text":"这是我的第一个mock的post请求"
+      "headers":{"Content-Type":"text/html;charset=utf-8"},
+      "file":"./ls.xml"
     }
   },
   {

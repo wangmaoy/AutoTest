@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thunisoft.fbajxx.dao">
+    <!--数据库中实际查询结果条数-->
+    <select id="database_count" parameterType="com.thunisoft.fbajxx.model.Fbajxx" resultType="Integer" statementType="STATEMENT">
+        select count(*) from db_fbajxx.t_aj_all
+        where n_jbfybs=${fyid}
+        and dt_zhgxsj>='${gxrq}'
+        and c_ajlbdm='020000'
+    </select>
+    <!--接口返回的数据明细 从源库查询-->
+    <select id="ajxxlist" parameterType="Integer" resultType="com.thunisoft.fbajxx.dao.TAjAll" statementType="STATEMENT">
+        select * from db_fbajxx.t_aj_all
+        where n_jbfybs=${fyid}
+        and dt_zhgxsj>='${gxrq}'
+        and c_ajlbdm='020000'
+        order by dt_zhgxsj desc
+        limit 10
+    </select>
+
+</mapper>

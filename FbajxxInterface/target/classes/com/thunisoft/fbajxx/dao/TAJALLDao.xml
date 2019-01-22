@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thunisoft.fbajxx.dao.TAjAllDao">
+
+    <select id="findAjById" resultType="com.thunisoft.fbajxx.dao.TAjAll" >
+        select * from db_fbajxx.t_aj_all where c_ajbh = #{c_ajbh}
+    </select>
+</mapper>

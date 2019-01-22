@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MyPostMethod {
     //这个变量是用来装我们cookies信息的
     private static Cookie cookie;
-
     //用户登陆成功获取到cookies，然后再访问其他接口获取到列表
-
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ApiOperation(value = "登陆接口，成功后获取cookies信息",httpMethod = "POST")
     public String login(HttpServletResponse response,
@@ -30,12 +28,9 @@ public class MyPostMethod {
     }
     @RequestMapping(value = "/getUserList",method = RequestMethod.POST)
     @ApiOperation(value = "获取用户列表",httpMethod = "POST")
-    public String getUserList(HttpServletRequest request,
-                              @RequestBody User u){
-
+    public String getUserList(HttpServletRequest request, @RequestBody User u){
         User user;
-        //获取cookies
-        Cookie[] cookies = request.getCookies();
+        Cookie[] cookies = request.getCookies(); //获取cookies
         //验证cookies是否合法
         for(Cookie c : cookies){
             if(c.getName().equals("login")
@@ -49,9 +44,7 @@ public class MyPostMethod {
                 user.setSex("man");
                 return  user.toString();
             }
-
         }
-
         return "参数不合法";
     }
 }

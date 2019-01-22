@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="接口测试套件">
+    <test name="非标信息接口测试用例">
+        <classes>
+            <class name="com.interfacedemo.fbajxx.cases.FbajxxTest">
+                <methods>
+                    <include name="fbajxxTest"/>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+    <listeners>
+        <listener class-name="com.interfacedemo.fbajxx.config.ExtentTestNGIReporterListener" />
+    </listeners>
+</suite>

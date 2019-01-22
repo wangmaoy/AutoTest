@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thunisoft.fbajxx.model">
+    <!-- fbajxx 第一条用例-->
+    <select id="fbajxx_01" parameterType="Integer" resultType="com.interfacedemo.fbajxx.model.Fbajxx">
+        select * from fbajxx
+        where id=#{id};
+    </select>
+    <!--fbajxx总用例数-->
+    <select id="fbajxx_count" parameterType="Integer" resultType="Integer">
+        select count(*) from fbajxx
+    </select>
+    <!--数据库中实际查询结果条数-->
+    <select id="database_count" parameterType="Integer" resultType="Integer">
+        select count(*) from fbajxx
+    </select>
+</mapper>
