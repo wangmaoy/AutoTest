@@ -2,6 +2,7 @@ package com.selenium.sjzj.base;
 
 import org.openqa.selenium.*;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -74,6 +75,17 @@ public class DriverBase {
      */
     public void setCookie(Cookie cookie){
         driver.manage().addCookie(cookie);
+    }
+    /**
+     * 切换fram
+     */
+    public void switchFrame(WebElement webElement){
+        driver.switchTo().frame(webElement);
+    }
+
+    public List<WebElement> findElements(By by){
+
+        return driver.findElements(by);
     }
 
 }

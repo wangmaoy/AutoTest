@@ -13,6 +13,7 @@ public class GzpzStepOnePageHandle {
      * 找到元素数据源 选择下拉框中弹出的数据源
      */
     public void selectSjy(){
+        //gzpzStepOnePage.elementSendKeys(gzpzStepOnePage.getFstepSjy(),"质检32.221:5432");
         gzpzStepOnePage.click(gzpzStepOnePage.getFstepSjy());
         try {
             Thread.sleep(3000);

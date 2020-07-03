@@ -33,6 +33,12 @@ public class GzpzStepTwoZdyPageHandle {
         gzpzStepTwoZdyPage.click(gzpzStepTwoZdyPage.getCsyz());
     }
     /**
+     * 点击弹出框确定按钮
+     */
+    public void clickConfirmButton(){
+        gzpzStepTwoZdyPage.click(gzpzStepTwoZdyPage.getConfimButton());
+    }
+    /**
      * 获取下一步元素，点击下一步
      */
     public void clickNextbutton(){

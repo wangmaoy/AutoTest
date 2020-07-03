@@ -3,6 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
 <mapper namespace="com.tester.model">
+    <!--下面这些是测试用例的查询操作，因为我们把用例都放到了数据库中-->
     <!--获取登陆接口case-->
     <select id="loginCase" parameterType="Integer"  resultType="com.tester.model.LoginCase">
 
@@ -27,6 +28,8 @@
     <select id="updateUserInfoCase" parameterType="Integer" resultType="com.tester.model.UpdateUserInfoCase">
         select * from updateUserInfoCase where id = #{id};
     </select>
+
+    <!--下面这些是测试自己去数据库中查询数据，看接口是否将数据正确增删改到数据库-->
     <!--添加用户接口-->
     <select id="addUser" parameterType="com.tester.model.AddUserCase" resultType="com.tester.model.User">
         select * from user where

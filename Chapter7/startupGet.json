@@ -6,7 +6,8 @@
       "method": "get"
     },
     "response": {
-      "text": "这是一个没有参数的get请求"
+      "headers":{"Content-Type":"text/html;charset=gbk"},
+      "text": "this is a get request"
     }
   },
   {
@@ -20,6 +21,9 @@
       }
     },
     "response":{
+
+      "headers":{"Content-Type":"text/html;charset=gbk"},
+      "status":200,
       "text":"我huhansan又回来了"
     }
   }

@@ -37,6 +37,12 @@ public class GzpzStepTwoZdyPage extends BasePage{
         return findelement(GetByLocator.getByLocator("sstep_zdy_csyz"));
     }
     /**
+     * 弹出框确认按钮
+     */
+    public WebElement getConfimButton(){
+        return findelement(GetByLocator.getByLocator("sstep_zdy_confim_button"));
+    }
+    /**
      * 下一步按钮
      */
     public WebElement getNextbutton(){

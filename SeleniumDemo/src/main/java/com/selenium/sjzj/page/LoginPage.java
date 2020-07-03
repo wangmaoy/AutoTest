@@ -2,6 +2,7 @@ package com.selenium.sjzj.page;
 
 import com.selenium.sjzj.base.DriverBase;
 import com.selenium.sjzj.util.GetByLocator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;;
 
 /**
@@ -16,7 +17,6 @@ public class LoginPage extends BasePage {
      *获取登录界面用户名元素
      */
     public WebElement getUserNameElement(){
-
         return findelement(GetByLocator.getByLocator("login_username"));
     }
     /**

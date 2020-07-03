@@ -13,15 +13,16 @@
   {
     "description":"这是一个带参数的post请求",
     "request":{
-      "uri":"/postdemoparam",
+      "uri":"/postparam",
       "method":"post",
       "forms":{
         "name":"huhansan",
-        "sex":"man"
+        "sex":"2"
       }
     },
     "response":{
-      "text":"post带参数返回"
+      "headers":{"Content-Type":"text/html;charset=gbk"},
+     "text":"I come back"
     }
   }
 ]

@@ -2,6 +2,7 @@ package com.selenium.sjzj.handle;
 
 import com.selenium.sjzj.base.DriverBase;
 import com.selenium.sjzj.page.LoginPage;
+import org.openqa.selenium.WebElement;
 
 public class LoginHandle {
     private LoginPage lp;
@@ -12,6 +13,7 @@ public class LoginHandle {
      * 找到user元素并输入用户名
      */
     public void sendKeysUser(String username){
+        WebElement webElement=lp.getUserNameElement();
         lp.elementSendKeys(lp.getUserNameElement(),username);
     }
     /**

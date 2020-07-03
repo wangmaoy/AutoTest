@@ -19,4 +19,5 @@ public class HomePage  extends BasePage{
     public WebElement getHomeUserText(){
         return findelement(GetByLocator.getByLocator("home_user_text"));
     }
+
 }

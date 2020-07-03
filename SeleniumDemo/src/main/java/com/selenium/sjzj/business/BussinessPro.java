@@ -93,6 +93,11 @@ public class BussinessPro {
      * 新建规则第3步
      */
     public void tstepPro(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //选择调度任务
         gzpzStepThreePageHandle.clickDdrw();
         //点击完成
@@ -106,18 +111,21 @@ public class BussinessPro {
     /**
      * 新建规则第二步 自定义规则
      */
-    public void zdygz(){
+    public void zdygz(String gzmc,String zjdx,String gzsql){
         gzpzStepTwoZdyPageHandle.clickTjzdygzButton();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        String zjdx="Select n_ajzlb from db_spyw.t_aj";
-        String gzsql="n_ajzlb is null";
+        //String zjdx="select c_id from db_test.t_gxjh";
+        //String gzsql="n_jafs is null";
         gzpzStepTwoZdyPageHandle.sendKeysZjdx(zjdx);
         gzpzStepTwoZdyPageHandle.sendKeysGzsql(gzsql);
         gzpzStepTwoZdyPageHandle.cilckCsyz();
+
+        gzpzStepTwoZdyPageHandle.clickConfirmButton();
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

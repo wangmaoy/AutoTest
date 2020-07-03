@@ -34,6 +34,7 @@
       <module name="SeleniumDemo" target="1.8" />
       <module name="sjzjv" target="1.8" />
       <module name="slxx" target="1.7" />
+      <module name="spring_ioc" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

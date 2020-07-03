@@ -18,7 +18,7 @@ public class GzpzStepThreePage extends BasePage{
         return findelement(GetByLocator.getByLocator("tstep_ddrw"));
     }
     /**
-     * 获取调度人员弹出框元素
+     * 获取调度任务弹出框元素
      */
     public WebElement getTstepDdrwSelectBox(){
         return findelement(GetByLocator.getByLocator("tstep_ddrw_select_box"));
