@@ -18,6 +18,7 @@ public class HandleCookieUtil {
     public void setCookie(){
         String value=proUtil.getPro("JSESSIONID");
         Cookie cookie=new Cookie("JSESSIONID",value,"[IP]","/sjzj",null);
+
         driverBase.setCookie(cookie);
     }
     /**

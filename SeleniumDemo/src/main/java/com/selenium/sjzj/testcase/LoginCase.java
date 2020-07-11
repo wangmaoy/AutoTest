@@ -39,7 +39,7 @@ public class LoginCase {
      */
     public void loginCase(){
         driverBase.getMaxWindow();
-        driverBase.getUrl("http://tap.thunisoft.com/ssoserver/login?service=http://172.16.176.216:19999/sjzj/cas");
+        driverBase.getUrl("ip");
         bussinessPro.login("dsj","12345678Aa");
         try {
             Thread.sleep(2000);
